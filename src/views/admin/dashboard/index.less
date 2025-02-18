@@ -1,0 +1,66 @@
+.dashboard {
+  padding: 20px;
+
+  .welcome-section {
+    background: linear-gradient(135deg, #1890ff 0%, #36cfc9 100%);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .welcome-left {
+      flex: 1;
+
+      .greeting {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+
+      .datetime {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        font-size: 16px;
+      }
+
+      .welcome-text {
+        font-size: 16px;
+        opacity: 0.9;
+      }
+    }
+
+    .welcome-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      .welcome-image {
+        max-width: 300px;
+        height: auto;
+      }
+    }
+  }
+
+  .quote-text {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    padding: 12px 0;
+  }
+
+  :deep(.ant-card) {
+    border-radius: 8px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
