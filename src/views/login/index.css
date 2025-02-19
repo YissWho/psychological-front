@@ -134,10 +134,10 @@
 }
 .mode-switch {
   display: flex;
-  background: #f0f2f5;
+  background: #b5d3ff;
   border-radius: 12px;
   padding: 4px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .mode-switch .switch-option {
   flex: 1;
@@ -146,11 +146,6 @@
   cursor: pointer;
   border-radius: 8px;
   transition: all 0.3s ease;
-}
-.mode-switch .switch-option.active {
-  background: white;
-  color: #1890ff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .custom-input {
   border-radius: 12px;

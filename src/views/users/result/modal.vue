@@ -12,7 +12,7 @@
           <div ref="pieChartRef" class="chart"></div>
         </div>
         <div class="chart-item">
-          <h4>{{ chartsData[1]?.title }}</h4>
+          <h4>{{ chartsData[1]?.title+'（得分越大越严重）' }}</h4>
           <div ref="barChartRef" class="chart"></div>
         </div>
       </div>

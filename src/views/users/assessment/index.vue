@@ -1,8 +1,8 @@
 <template>
-  <div class="assessment-container" style="padding: 24px">
+  <div class="assessment-container" style="padding: 22px">
     <a-card title="心理评估" :loading="loading">
       <div class="header">
-        <p class="description">请选择以下任一问卷开始评估</p>
+        <p class="description">请选择以下任一问卷开始评估，可重复评估</p>
       </div>
       <a-list
         :grid="{ gutter: 16, column: 4 }"

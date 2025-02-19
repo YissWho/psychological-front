@@ -145,47 +145,65 @@ onMounted(() => {
 
 <style scoped lang="less">
 .assessment-create {
+  padding: 0 24px;
+
   .questionnaire-content {
-    margin-top: 24px;
+    max-width: 1200px;
+    margin: 24px auto;
 
     .questions-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      
       .question-item {
-        margin-bottom: 32px;
+        margin-bottom: 0;
         padding: 24px;
-        background: #fafafa;
-        border-radius: 8px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
         .question-title {
           font-size: 16px;
           font-weight: 500;
           margin-bottom: 16px;
-          color: #333;
+          color: #262626;
+          line-height: 1.5;
         }
 
         .option-item {
           display: block;
           margin: 12px 0;
+          padding: 8px 12px;
+          border-radius: 6px;
+          transition: all 0.3s;
 
           &:hover {
-            background: #f0f0f0;
+            background: #f5f5f5;
           }
         }
       }
     }
   }
 
+  @media screen and (max-width: 768px) {
+    .questionnaire-content .questions-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .form-actions {
-    margin-top: 24px;
+    margin: 32px 0;
     display: flex;
-    justify-content: flex-end;
-    gap: 12px;
+    justify-content: center;
+    gap: 16px;
   }
 
   .loading-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
+    min-height: 500px;
   }
 }
 </style>

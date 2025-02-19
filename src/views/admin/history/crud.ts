@@ -52,7 +52,7 @@ export default function ({
       },
       columns: {
         id: {
-          title: "ID",
+          title: "测评记录ID",
           type: "number",
           form: { show: false },
           column: {

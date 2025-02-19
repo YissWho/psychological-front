@@ -128,7 +128,7 @@ export default function ({
           dict: dict({
             data: [
               { value: "LOW", label: "低" },
-              { value: "MEDIUM", label: "中" },
+              { value: "NORMAL", label: "中" },
               { value: "HIGH", label: "高" },
             ],
           }),
@@ -148,7 +148,7 @@ export default function ({
           dict: dict({
             data: [
               { value: "LOW", label: "低" },
-              { value: "MEDIUM", label: "中" },
+              { value: "NORMAL", label: "中" },
               { value: "HIGH", label: "高" },
             ],
           }),

@@ -14,17 +14,8 @@
       <div class="mode-switch animate__animated animate__fadeIn">
         <div 
           class="switch-option" 
-          :class="{ active: loginType === 'user' }"
-          @click="loginType = 'user'"
         >
           用户登录
-        </div>
-        <div 
-          class="switch-option" 
-          :class="{ active: loginType === 'admin' }"
-          @click="loginType = 'admin'"
-        >
-          管理员登录
         </div>
       </div>
 
@@ -37,7 +28,7 @@
         <a-form-item name="username">
           <a-input
             v-model:value="form.username"
-            :placeholder="loginType === 'user' ? '请输入用户名' : '请输入管理员账号'"
+            placeholder="请输入用户名"
             :disabled="loading"
             size="large"
             class="custom-input"
@@ -99,7 +90,6 @@ interface LoginForm {
 const router = useRouter()
 const userStore = useUserStore()
 const loading = ref(false)
-const loginType = ref<'user' | 'admin'>('user')
 
 const form = ref<LoginForm>({
   username: 'admin',

@@ -8,6 +8,7 @@ import "animate.css"
 import { FastCrud } from "@fast-crud/fast-crud"
 import "@fast-crud/fast-crud/dist/style.css"
 import ui from "@fast-crud/ui-antdv"
+import { FsExtendsUploader } from "@fast-crud/fast-extends"
 
 const app = createApp(App)
 const pinia = createPinia()
@@ -18,5 +19,8 @@ app.use(Antd)
 app.use(ui)
 // 然后安装FastCrud
 app.use(FastCrud)
+app.use(FsExtendsUploader, {
+  defaultType: "cos",
+})
 
 app.mount("#app")

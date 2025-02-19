@@ -3,6 +3,7 @@ import {
   CreateCrudOptionsRet,
   dict,
 } from "@fast-crud/fast-crud"
+import { h } from "vue"
 import {
   createUser,
   deleteUser,
@@ -53,7 +54,7 @@ export default function ({
         border: true,
         stripe: true,
         rowKey: "id",
-        scroll: { x: 'max-content' },
+        scroll: { x: "max-content" },
         size: "small",
       },
       pagination: {
@@ -62,7 +63,7 @@ export default function ({
       form: {
         col: { span: 12 },
         labelWidth: "100px",
-        afterSubmit({ mode}) {
+        afterSubmit({ mode }) {
           console.log(mode)
           notification.success({ message: "操作成功" })
         },
@@ -77,6 +78,25 @@ export default function ({
             align: "center",
           },
         },
+        avatar: {
+          title: "头像",
+          type: "image-uploader",
+          form: { show: false },
+          column: {
+            width: 80,
+            component: {
+              async buildUrl(value: any) {
+                return `http://localhost:8080/api${value}`
+              },
+              style: {
+                width: "50px",
+                height: "50px",
+                borderRadius: "50%",
+                objectFit: "cover",
+              },
+            },
+          },
+        },
         username: {
           title: "用户名",
           type: "text",
@@ -89,8 +109,8 @@ export default function ({
           form: {
             rules: [{ required: true, message: "请输入用户名" }],
             component: {
-              placeholder: "请输入用户名"
-            }
+              placeholder: "请输入用户名",
+            },
           },
           column: {
             width: 100,
@@ -111,8 +131,8 @@ export default function ({
               { type: "email", message: "请输入正确的邮箱格式" },
             ],
             component: {
-              placeholder: "请输入邮箱"
-            }
+              placeholder: "请输入邮箱",
+            },
           },
           column: {
             width: 150,
@@ -129,8 +149,8 @@ export default function ({
           },
           form: {
             component: {
-              placeholder: "请选择角色"
-            }
+              placeholder: "请选择角色",
+            },
           },
           dict: dict({
             data: [
@@ -156,15 +176,15 @@ export default function ({
         fixed: "right",
         buttons: {
           view: {
-            size: "small"
+            show: false,
           },
           edit: {
-            size: "small"
+            size: "small",
           },
           remove: {
-            size: "small"
-          }
-        }
+            size: "small",
+          },
+        },
       },
     },
   }

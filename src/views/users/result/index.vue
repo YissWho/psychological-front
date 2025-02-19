@@ -81,75 +81,75 @@ const viewMode = ref("basic")
 
 // 表格列定义
 const basicColumns = [
-  { 
-    title: "评测名称", 
-    dataIndex: "assessmentTitle", 
+  {
+    title: "评测名称",
+    dataIndex: "assessmentTitle",
     key: "assessmentTitle",
     width: 200,
-    ellipsis: true 
+    ellipsis: true,
   },
-  { 
-    title: "评估结果", 
-    dataIndex: "resultCategory", 
+  {
+    title: "评估结果",
+    dataIndex: "resultCategory",
     key: "resultCategory",
     width: 120,
-    align: 'center'
+    align: "center",
   },
-  { 
-    title: "评测时间", 
-    dataIndex: "createdAt", 
+  {
+    title: "评测时间",
+    dataIndex: "createdAt",
     key: "createdAt",
     width: 180,
-    align: 'center'
+    align: "center",
   },
-  { 
-    title: "操作", 
+  {
+    title: "操作",
     key: "action",
     width: 120,
-    align: 'center'
+    align: "center",
   },
 ]
 
 const detailedColumns = [
-  { 
-    title: "评测名称", 
-    dataIndex: "assessmentTitle", 
+  {
+    title: "评测名称",
+    dataIndex: "assessmentTitle",
     key: "assessmentTitle",
     width: 200,
-    ellipsis: true
+    ellipsis: true,
   },
-  { 
-    title: "总分", 
-    dataIndex: "totalScore", 
+  {
+    title: "总分",
+    dataIndex: "totalScore",
     key: "totalScore",
     width: 100,
-    align: 'center'
+    align: "center",
   },
-  { 
-    title: "评估结果", 
-    dataIndex: "category", 
+  {
+    title: "评估结果",
+    dataIndex: "category",
     key: "category",
     width: 120,
-    align: 'center'
+    align: "center",
   },
-  { 
-    title: "评估描述", 
-    dataIndex: "description", 
+  {
+    title: "评估描述",
+    dataIndex: "description",
     key: "description",
-    ellipsis: true
+    ellipsis: true,
   },
-  { 
-    title: "建议", 
-    dataIndex: "recommendation", 
+  {
+    title: "建议",
+    dataIndex: "recommendation",
     key: "recommendation",
-    ellipsis: true
+    ellipsis: true,
   },
-  { 
-    title: "评测时间", 
-    dataIndex: "createdAt", 
+  {
+    title: "评测时间",
+    dataIndex: "createdAt",
     key: "createdAt",
     width: 180,
-    align: 'center'
+    align: "center",
   },
 ]
 
@@ -187,12 +187,12 @@ const formatDate = (date: string) => {
 // 获取评估结果标签颜色
 const getCategoryColor = (category: string) => {
   const colorMap: Record<string, string> = {
-    '正常': 'success',
-    '轻度': 'warning',
-    '中度': 'orange',
-    '重度': 'error',
+    正常: "success",
+    轻度: "warning",
+    中度: "orange",
+    重度: "error",
   }
-  return colorMap[category] || 'default'
+  return colorMap[category] || "default"
 }
 
 const currentId = ref<any>(null)

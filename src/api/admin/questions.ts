@@ -58,10 +58,6 @@ export const deleteQuestionnaireScoreRules = (
   assessmentId: string,
   category: string
 ) => {
-  return request.delete("/admin/result-explanations", {
-    params: {
-      assessmentId,
-      category,
-    },
-  })
+  const encodedCategory = encodeURIComponent(category);
+  return request.delete(`/admin/result-explanations/${assessmentId}/${encodedCategory}`)
 }
