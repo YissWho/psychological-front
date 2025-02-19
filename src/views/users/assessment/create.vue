@@ -101,7 +101,7 @@ const { run: submitForm } = useRequest(submitAssessment, {
   manual: true,
   onSuccess: () => {
     message.success("提交成功")
-    router.push("/users/assessment")
+    router.push("/users/result")
   },
   onError: (error) => {
     message.error("提交失败：" + error.message)

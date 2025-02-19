@@ -41,17 +41,18 @@
         <div class="header-right">
           <a-dropdown>
             <div class="user-info">
-              <a-avatar>
-                <template #icon><UserOutlined /></template>
+              <a-avatar :src="avatar.startsWith('http') ? avatar : `http://localhost:8080/api${avatar}`">
               </a-avatar>
               <span class="username">{{ username }}</span>
             </div>
             <template #overlay>
               <a-menu>
-                <a-menu-item @click="handleProfile">
-                  <user-outlined />
-                  <span>个人中心</span>
-                </a-menu-item>
+                <template v-if="!isAdmin">
+                  <a-menu-item @click="handleProfile">
+                    <user-outlined />
+                    <span>心理档案</span>
+                  </a-menu-item>
+                </template>
                 <a-menu-item @click="handleLogout">
                   <logout-outlined />
                   <span>退出登录</span>
@@ -94,7 +95,7 @@ console.log(isAdmin.value)
 /* 获取用户信息 */
 userStore.getUserInfo()
 const username = computed(() => userStore.userInfo?.username || "未知用户")
-
+const avatar = computed(() => userStore.userInfo?.avatar || "未知用户")
 // 根据用户类型显示对应菜单
 const currentMenus = computed(() => (isAdmin.value ? adminMenus : userMenus))
 
@@ -112,7 +113,7 @@ const handleMenuClick = ({ key }: { key: string }) => {
 }
 
 const handleProfile = () => {
-  router.push(isAdmin.value ? "/admin/profile" : "/users/profile")
+  router.push("/users/information")
 }
 
 const handleLogout = async () => {

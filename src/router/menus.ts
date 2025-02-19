@@ -3,8 +3,9 @@ import {
   FormOutlined,
   BarChartOutlined,
   UserOutlined,
-  SettingOutlined,
   FileTextOutlined,
+  HistoryOutlined,
+  UsergroupAddOutlined
 } from '@ant-design/icons-vue'
 
 export const userMenus = [
@@ -47,8 +48,13 @@ export const adminMenus = [
     label: '问卷管理',
   },
   {
-    key: '/admin/settings',
-    icon: SettingOutlined,
-    label: '系统设置',
+    key: '/admin/history',
+    icon: HistoryOutlined,
+    label: '用户测评记录',
+  },
+  {
+    key: '/admin/records',
+    icon: UsergroupAddOutlined,
+    label: '用户心理档案',
   },
 ] 

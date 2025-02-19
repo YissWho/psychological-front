@@ -1,35 +1,36 @@
 <template>
-  <div class="assessment-container">
-    <div class="header">
-      <h2>心理评估</h2>
-      <p class="description">请选择以下任一问卷开始评估</p>
-    </div>
-    <a-list
-      :grid="{ gutter: 16, column: 4 }"
-      :data-source="assessmentList"
-      :loading="loading"
-    >
-      <template #renderItem="{ item }">
-        <a-list-item>
-          <a-card
-            hoverable
-            class="assessment-card"
-            @click="handleAssessmentClick(item.id)"
-          >
-            <template #cover>
-              <div class="card-icon">
-                <FormOutlined />
-              </div>
-            </template>
-            <a-card-meta :title="item.title">
-              <template #description>
-                <div class="card-description">{{ item.description }}</div>
+  <div class="assessment-container" style="padding: 24px">
+    <a-card title="心理评估" :loading="loading">
+      <div class="header">
+        <p class="description">请选择以下任一问卷开始评估</p>
+      </div>
+      <a-list
+        :grid="{ gutter: 16, column: 4 }"
+        :data-source="assessmentList"
+        :loading="loading"
+      >
+        <template #renderItem="{ item }">
+          <a-list-item>
+            <a-card
+              hoverable
+              class="assessment-card"
+              @click="handleAssessmentClick(item.id)"
+            >
+              <template #cover>
+                <div class="card-icon">
+                  <FormOutlined />
+                </div>
               </template>
-            </a-card-meta>
-          </a-card>
-        </a-list-item>
-      </template>
-    </a-list>
+              <a-card-meta :title="item.title">
+                <template #description>
+                  <div class="card-description">{{ item.description }}</div>
+                </template>
+              </a-card-meta>
+            </a-card>
+          </a-list-item>
+        </template>
+      </a-list>
+    </a-card>
   </div>
 </template>
 

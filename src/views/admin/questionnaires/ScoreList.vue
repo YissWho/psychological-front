@@ -69,10 +69,15 @@
         </a-form-item>
 
         <a-form-item label="评估类别" name="category">
-          <a-input
+          <a-select
             v-model:value="formData.category"
-            placeholder="例如：正常、轻度、中度、重度等评估等级"
-          />
+            placeholder="请选择"
+          >
+            <a-select-option value="正常">正常</a-select-option>
+            <a-select-option value="轻度">轻度</a-select-option>
+            <a-select-option value="中度">中度</a-select-option>
+            <a-select-option value="重度">重度</a-select-option>
+          </a-select>
         </a-form-item>
 
         <a-form-item label="评估描述" name="description">
@@ -259,6 +264,7 @@ const handleCancel = () => {
 const handleSubmit = () => {
   formRef.value?.validate().then(async () => {
     try {
+      /* 判断是否有 originalCategory 属性，如果有则更新，否则创建 */
       if (formData.value.originalCategory) {
         await updateQuestionnaireScoreRules(formData.value)
         message.success("更新成功")

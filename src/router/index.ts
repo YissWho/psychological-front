@@ -98,24 +98,24 @@ const routes: Array<RouteRecordRaw> = [
           title: "评分规则",
         },
       },
-      /*       {
-        path: 'settings',
-        name: 'Settings',
-        component: () => import('../views/admin/settings/index.vue'),
+      {
+        path: "history",
+        name: "History",
+        component: () => import("../views/admin/history/index.vue"),
         meta: {
           requiresAuth: true,
-          title: '系统设置'
-        }
-      }, */
-      /*       {
-        path: 'profile',
-        name: 'AdminProfile',
-        component: () => import('../views/admin/profile/index.vue'),
+          title: "用户测评记录",
+        },
+      },
+      {
+        path: "records",
+        name: "UserRecords",
+        component: () => import("../views/admin/records/index.vue"),
         meta: {
           requiresAuth: true,
-          title: '个人中心'
-        }
-      } */
+          title: "用户心理档案",
+        },
+      },
     ],
   },
   {
